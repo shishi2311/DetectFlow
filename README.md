@@ -39,15 +39,29 @@ DetectFlow/
 - Python 3.10+
 - pip
 
-### Setup
+### Setup (Recommended — Virtual Environment)
 
 ```bash
 # Clone the repository
 git clone https://github.com/shishi2311/DetectFlow.git
 cd DetectFlow
 
-# Install dependencies
+# Option A: One-command setup (creates venv + installs everything)
+chmod +x setup.sh
+./setup.sh
+source venv/bin/activate
+
+# Option B: Manual setup
+python3 -m venv venv
+source venv/bin/activate        # Linux/Mac
+# venv\Scripts\activate         # Windows
 pip install -r requirements.txt
+pip install yt-dlp              # for video downloading
+```
+
+To deactivate the virtual environment when done:
+```bash
+deactivate
 ```
 
 ### Dependencies

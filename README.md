@@ -63,6 +63,24 @@ pip install -r requirements.txt
 
 ## How to Run
 
+### One-Command Download & Run
+
+The easiest way to get started — downloads a public video and runs the full pipeline:
+
+```bash
+# Install yt-dlp (needed once)
+pip install yt-dlp
+
+# Download a video and run the pipeline in one command
+python download_and_run.py --url "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+
+# With extra options passed through to the pipeline
+python download_and_run.py --url "https://www.youtube.com/watch?v=VIDEO_ID" --max-frames 500 --device cuda
+
+# Skip re-downloading if video already exists
+python download_and_run.py --url "https://www.youtube.com/watch?v=VIDEO_ID" --skip-download
+```
+
 ### Basic Usage
 
 ```bash

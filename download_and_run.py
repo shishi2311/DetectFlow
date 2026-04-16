@@ -34,7 +34,6 @@ def download_video(url: str, output_path: str, max_height: int = 720) -> str:
     cmd = [
         "yt-dlp",
         "-f", f"best[height<={max_height}][ext=mp4]/best[height<={max_height}]/best",
-        "--max-filesize", "200M",
         "-o", output_path,
         "--no-playlist",
         url,
@@ -42,11 +41,10 @@ def download_video(url: str, output_path: str, max_height: int = 720) -> str:
 
     result = subprocess.run(cmd, capture_output=False)
     if result.returncode != 0:
-        print("ERROR: yt-dlp failed. Trying alternative format selection...")
+        print("yt-dlp: first attempt failed. Trying alternative format selection...")
         cmd_alt = [
             "yt-dlp",
             "-f", "best",
-            "--max-filesize", "200M",
             "-o", output_path,
             "--no-playlist",
             url,

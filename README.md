@@ -237,3 +237,25 @@ The `output/` directory contains:
 - **`trajectories.png`** — All player movement paths plotted on a single figure
 - **`heatmap.png`** — Spatial density map showing where players spent the most time
 - **`count_over_time.png`** — Number of actively tracked players per frame
+
+## Live Demo (Gradio Web App)
+
+Run the pipeline as an interactive web app:
+
+```bash
+pip install gradio
+python app.py
+```
+
+Opens at `http://localhost:7860`. Upload a video, adjust settings, and get annotated output + analytics.
+
+**Deploy to Hugging Face Spaces (free public hosting):**
+
+1. Create a new Space at [huggingface.co/new-space](https://huggingface.co/new-space)
+2. Select **Gradio** as the SDK
+3. Push the repo to the Space:
+   ```bash
+   git remote add hf https://huggingface.co/spaces/YOUR_USERNAME/DetectFlow
+   git push hf main
+   ```
+4. The app will be live at `https://huggingface.co/spaces/YOUR_USERNAME/DetectFlow`

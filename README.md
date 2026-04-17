@@ -21,10 +21,13 @@ DetectFlow/
 ├── pipeline.py              # Main pipeline orchestrating all modules
 ├── visualizer.py            # Drawing bounding boxes, IDs, trails
 ├── analytics.py             # Trajectory plots, heatmaps, count graphs
+├── download_and_run.py      # Helper: download video + run pipeline
+├── setup.sh                 # Virtual environment setup script
 ├── requirements.txt         # Python dependencies
 ├── TECHNICAL_REPORT.md      # Detailed technical report
+├── input_video.mp4          # Original source video
 ├── output/                  # Generated output files
-│   ├── annotated_output.mp4 # Annotated output video
+│   ├── annotated_output.mp4 # Annotated output video with tracking
 │   ├── screenshots/         # Sample screenshots at various frames
 │   ├── trajectories.png     # Object trajectory plot
 │   ├── heatmap.png          # Position heatmap
@@ -210,4 +213,27 @@ See [TECHNICAL_REPORT.md](TECHNICAL_REPORT.md) for detailed rationale on model a
 
 ## Video Source
 
-The video used for this project is publicly available. The source URL is provided in the output metadata and should be included in any submission.
+**Original Video**: [Football/Soccer Match — YouTube](https://youtu.be/KgQquW68E-Q)
+
+The video is publicly available football match footage. It was downloaded at 480p resolution for processing.
+
+## Results Summary
+
+| Metric | Value |
+|--------|-------|
+| Video resolution | 640x360 |
+| Frames processed | 500 (first 20 seconds) |
+| Processing time | ~435 seconds (CPU) |
+| Processing speed | ~1.1 FPS |
+| Unique IDs assigned | 29 |
+| Valid tracks (>= 3 frames) | 29 |
+| Players tracked per frame | 8–12 |
+
+### Sample Output
+
+The `output/` directory contains:
+- **`annotated_output.mp4`** — Full annotated video with bounding boxes, unique IDs, and trajectory trails
+- **`screenshots/`** — Sample frames captured at 10%, 25%, 50%, 75%, and 90% progress
+- **`trajectories.png`** — All player movement paths plotted on a single figure
+- **`heatmap.png`** — Spatial density map showing where players spent the most time
+- **`count_over_time.png`** — Number of actively tracked players per frame

@@ -1,3 +1,15 @@
+---
+title: DetectFlow
+emoji: 🎯
+colorFrom: blue
+colorTo: green
+sdk: gradio
+sdk_version: "5.23.0"
+python_version: "3.11"
+app_file: app.py
+pinned: false
+---
+
 # DetectFlow — Multi-Object Detection & Persistent ID Tracking
 
 A modular computer vision pipeline for detecting and tracking multiple objects (primarily people/players) in sports and event footage with persistent unique ID assignment.
